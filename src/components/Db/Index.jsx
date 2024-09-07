@@ -231,7 +231,7 @@ export const SectionDb=[
 
 ]
 
-export const Section=[
+export const SectionB=[
     {
         _id: 1,
         title: "Penthouse at Awka",

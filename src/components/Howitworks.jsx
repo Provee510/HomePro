@@ -1,5 +1,5 @@
 import React from 'react';
-import { howitworksDb } from './db';
+import { howitworksDb } from './Db/Index';
 import PropertyCard from './Card/PropertyCard';
 import Wrapper from '../components/Wrapper';
 
@@ -7,7 +7,7 @@ const HowitworksDb = () => {
   return (
     <Wrapper className="">
       <h1 className='text-5xl font-bold py-10'>How It Works</h1>
-      <div className='flex flex-nowrap gap-5 mb-7'>
+      <div className='flex flex-nowrap gap-5 mb-7 flex-col lg:flex-row'>
       {howitworksDb && howitworksDb.map((item, index)=>{
             return (
                 <div className='text-center lg:text-start' key={index}>

@@ -5,6 +5,7 @@ import FeaturedProperty from '../components/FeaturedProperty'
 import HowitworksDb from '../components/Howitworks'
 import OurListings from '../components/OurListings'
 import MeetOurAgents from '../components/MeetOurAgents'
+
 import backgroundImage from '../assets/Images/Line 3.png'; 
 
 

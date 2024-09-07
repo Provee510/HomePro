@@ -16,7 +16,6 @@ const App = () => {
     
     <BrowserRouter>
     <Nav/>
-    {/* <Hero/> */}
      <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<AboutUs/>} />

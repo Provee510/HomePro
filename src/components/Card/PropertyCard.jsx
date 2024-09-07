@@ -9,9 +9,9 @@ import tdesign from '../../assets/Images/tdesign_measurement-2.png'
 const PropertyCard = ({ _id, title, image, price, bed, bath, size }) => {
     return (
         <>
-            <div className="bg-slate-100 rounded-xl max-w-[400px] h-[396px]" key={_id}>
+            <div className="bg-slate-100 rounded-xl max-w-[400px] h-[396px] border border-slate-300" key={_id}>
                 <div className='rounded-lg p-6 max-w-[400px]'>
-                    <img src={image} alt='37(1)' className='w-[325px] h-[245px] r-[15px]' />
+                    <img src={image} alt='37(1)' className='w-[325px] h-[245px] ' />
                     <div className=' flex text-[#1F1F1F]  text-2xl font-Avenir LT Std w-[154px] justify-between my-1 '>
                         <img src={ngnIcon} alt='ngn' className=' w-[29px]' />
                         <span>{price && price.toLocaleString("en-us")}</span>
