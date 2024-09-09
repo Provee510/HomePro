@@ -6,7 +6,7 @@ import Htext from "../assets/Images/Homepro.png";
 import { useModal } from "../contexts/ModalContext";
 
 const Nav = () => {
-  const { handleOpenModal } = useModal();
+  const { handleOpenModal, toggleModal } = useModal();
   return (
     <div className="bg-[#F8F3DD]">
       <nav className="w-full flex flex-col md:flex-row items-center py-4 bg-[#F8F3DD] text-white justify-between lg:w-[90%] mx-auto">

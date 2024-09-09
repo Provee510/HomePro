@@ -72,30 +72,34 @@ import React from 'react';
 import imglogo from '../assets/Icons/icons/Vector (6) copy.png';
 import imglogo2 from '../assets/Icons/icons/Vector (7).png';
 import { useModal } from '../contexts/ModalContext';
+import { NavLink } from 'react-router-dom';
+
 
 const RegisterModal = () => {
-  const { isModalOpen, handleCloseModal } = useModal(); // Access modal state and controls
+  const { isModalOpen, handleCloseModal, toggleModal } = useModal(); // Access modal state and controls
 
-  if (!isModalOpen) return null; // If modal is not open, return null
-
+  if (!isModalOpen) return null; 
+ 
   return (
-    <div className="bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50">
+    <div className="bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50 overflow-hidden">
       <div className="bg-white lg:p-20 lg:rounded-3xl shadow-lg w-full max-w-3xl max-h-screen overflow-auto">
         <div className="relative flex items-center justify-center mb-6">
           <h1 className="text-2xl font-bold">REGISTER!</h1>
-          <button
+          <button 
             onClick={handleCloseModal} // Close modal when clicking 'X' button
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-xl"
+            className="absolute right-7 lg:right-0 top-4 -translate-y-1/2 text-xl"
           >
             X
           </button>
         </div>
 
         <p className="text-black mb-6 text-center">
-          Already have an account?{' '}
-          <a href="/login" className="text-[#9FA007] hover:underline">
-            Log in
-          </a>
+          Already have an account?
+          <span onClick={toggleModal}  className="text-[#9FA007] hover:underline"> 
+          Log In
+          </span>
+
+         
         </p>
         
         <form className="p-5">
@@ -104,6 +108,7 @@ const RegisterModal = () => {
             <input
               id="name"
               type="text"
+              required
               placeholder="Provee Blaq"
               className="w-full px-3 py-4 border border-gray-300 rounded-xl bg-slate-100"
             />
@@ -114,6 +119,7 @@ const RegisterModal = () => {
             <input
               id="email"
               type="email"
+              required
               placeholder="Proveeblaq@gmail.com"
               className="w-full px-3 py-4 border border-gray-300 rounded-xl bg-slate-100"
             />
@@ -124,6 +130,7 @@ const RegisterModal = () => {
             <input
               id="password"
               type="password"
+              required
               placeholder="Enter your password"
               className="w-full px-3 py-4 border border-gray-300 rounded-xl bg-slate-100"
             />

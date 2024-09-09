@@ -1,10 +1,83 @@
+// import React, { useState } from 'react';
+// import EyeIcon from '../assets/Icons/icons/carbon_view.png';
+// import EyeOffIcon from '../assets/Icons/icons/eyeoff.png'; 
+// import imglogo from '../assets/Icons/icons/Vector (6) copy.png';
+// import imglogo2 from '../assets/Icons/icons/Vector (7).png';
+// import { useModal } from '../contexts/ModalContext';
+// import { NavLink } from 'react-router-dom'; // Import NavLink
+
+// const LoginPage = () => {
+//   const { isModalOpen, handleCloseModal } = useModal(); // Access modal state and controls
+
+//   if (!isModalOpen) return null; // If modal is not open, return null
+
+//   const [passwordVisible, setPasswordVisible] = useState(false);
+
+//   const togglePasswordVisibility = () => {
+//     setPasswordVisible(prevState => !prevState);
+//   };
+
+//   return (
+//     <div className="bg-black flex items-center justify-center h-screen overflow-hidden font-bold">
+//       <div 
+//         className="bg-white lg:p-16 lg:rounded-3xl shadow-lg w-full max-w-3xl max-h-full lg:max-h-screen overflow-auto"
+//         style={{ 
+//           overflow: 'auto', 
+//           scrollbarWidth: 'none', /* For Firefox */
+//           msOverflowStyle: 'none' /* For Internet Explorer and Edge */
+//         }}
+//       >
+//         <style>
+//           {`
+//             .scrollbar-hidden::-webkit-scrollbar {
+//               display: none; /* For Chrome, Safari, and Opera */
+//             }
+//           `}
+//         </style>
+//         <div className="relative flex items-center justify-center mb-6">
+//           <h1 className="text-2xl font-bold">WELCOME BACK!</h1>
+//           <button
+//             onClick={handleCloseModal} // Close modal when clicking 'X' button
+//             className="absolute right-7 lg:right-0 top-4 -translate-y-1/2 text-xl"
+//           >
+//             X
+//           </button>
+//         </div>
+
+//         <p className="text-black mb-6 text-center">
+//           Don't have an account?{' '}
+//           {/* Use NavLink to navigate to the register page */}
+//           <NavLink to="/register" className="text-[#9FA007] hover:underline">
+//             Sign Up
+//           </NavLink>
+//         </p>
+
+//         {/* Rest of your form */}
+//         <form className="p-5">
+//           {/* Form inputs */}
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LoginPage;
+
+
 import React, { useState } from 'react';
 import EyeIcon from '../assets/Icons/icons/carbon_view.png';
 import EyeOffIcon from '../assets/Icons/icons/eyeoff.png'; 
-import imglogo from '../assets/Icons/icons/Vector (6) copy.png';
+// import imglogo from '../assets/Icons/icons/Vector (6) copy.png';
 import imglogo2 from '../assets/Icons/icons/Vector (7).png';
+import { NavLink } from 'react-router-dom';
+import { useModal } from '../contexts/ModalContext';
+
 
 const LoginPage = () => {
+  const { isModalOpen, handleCloseModal, toggleModal } = useModal(); // Access modal state and controls
+
+  if (!isModalOpen) return null; // If modal is not open, return null
+
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -22,21 +95,30 @@ const LoginPage = () => {
         }}
       >
         <style>
-          {`
+          
+          {
+            `
             .scrollbar-hidden::-webkit-scrollbar {
               display: none; /* For Chrome, Safari, and Opera */
             }
-          `}
+            `  
+          }
         </style>
         <div className="relative flex items-center justify-center mb-6">
           <h1 className="text-2xl font-bold">WELCOME BACK!</h1>
-          <span className="absolute right-0 top-1/2 -translate-y-1/2">
-            <img src={imglogo} alt="Logo" />
-          </span>
+          <button
+            onClick={handleCloseModal} // Close modal when clicking 'X' button
+            className="absolute right-7 lg:right-0 top-4 -translate-y-1/2 text-xl"
+          >
+            X
+          </button>
         </div>
 
         <p className="text-black mb-6 text-center">
-          Don't have an account? <a href="/register" className="text-[#9FA007] hover:underline">Sign Up</a>
+          Don't have an account?  <NavLink onClick={toggleModal}  className="text-[#9FA007] hover:underline">
+             Sign Up
+          </NavLink>
+
         </p>
 
         <form className='p-5'>

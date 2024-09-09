@@ -10,13 +10,15 @@ import Contact from "./Pages/Contact";
 import LoginPage from "./components/Login";
 import { ModalProvider } from "./contexts/ModalContext";
 import RegisterModal from "./components/RegisterPage";
+import AuthModal from "./contexts/AuthModal";
 
 const App = () => {
   return (
     <ModalProvider>
       <BrowserRouter>
         <Nav />
-        <RegisterModal/>
+        {/* <RegisterModal/> */}
+        <AuthModal />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -24,7 +26,6 @@ const App = () => {
           <Route path="/listings" element={<Listing />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </ModalProvider>
