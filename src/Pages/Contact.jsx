@@ -15,7 +15,7 @@ const ContactPage = () => {
             to assist you. Please fill out the form below or reach out to us directly through the provided
             contact information.
           </p>
-          <form className='lg:space-y-10' action="" method="post">
+          <form className='lg:space-y-10' action="" method="post ">
           <div  className="flex flex-wrap gap-4 mb-4 ">
             <div className="flex-1">
               <input

@@ -69,31 +69,32 @@ const PropertySearchLayout = () => {
         </div>
 
         {/* Right Side */}
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 ">
           <Section />
          
-          <div className="flex lg:items-start lg:justify-start py-6 space-x-10 ml-5 lg:ml-0">
-            <button className="p-3 bg-gray-200 text-gray-700  shadow-sm hover:bg-gray-300">
+          <div className="flex lg:items-start lg:justify-start lg:py-[7%] space-x-10  lg:ml-0 lg:w-[100%] p-10 lg:p-0 ">
+            <button className="p-3 bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 lg:w-[6%] ">
               &lt; {/* Left Arrow */}
             </button>
-            <div className="flex items-center   space-x-10">
-              <button className="p-[13px] bg-[#9FA007] text-white rounded-md shadow-sm hover:bg-[#7e7e22]">
+            <div className="flex items-center  lg:w-[100%] space-x-10">
+              <button className="p-[13px] bg-[#b3b328] text-gray-700 rounded-md shadow-sm hover:bg-[#626215] lg:w-[6%]  ">
                 1
               </button>
-              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300">
+              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 lg:w-[6%]">
                 2
               </button>
-              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300">
+              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 lg:w-[6%]">
                 ...
               </button>
-              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300">
+              <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 lg:w-[6%]">
                 10
               </button>
-            </div>
-            <button className="p-[13px] bg-gray-200 text-gray-700 rounded-md  hover:bg-gray-300">
+              <button className="p-3 bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 lg:w-[6%]">
                &gt;
                {/* /* Right Arrow  */} 
             </button>
+            </div>
+           
           </div>
         </div>
       </div>
