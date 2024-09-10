@@ -4,9 +4,9 @@ import Footer from '../components/Footer'
 // import RegisterPage from '../components/RegisterPage'
 // import LoginPage from '../components/Login'
 // import ThankYou from '../components/ThankYou'
-// import Dashbord from '../components/Dashbord'
+import Dashbord from '../components/Dashbord'
 // import Recent from '../components/Recent'
-import PropertyPurchased from '../components/PropertyPurchased'
+// import PropertyPurchased from '../components/PropertyPurchased'
 
 
 const Blog = () => {
@@ -17,9 +17,9 @@ const Blog = () => {
       {/* <RegisterPage/> */}
       {/* <LoginPage/> */}
       {/* <ThankYou/> */}
-      {/* <Dashbord/> */}
+      <Dashbord/>
       {/* <Recent/> */}
-      <PropertyPurchased/>
+      {/* <PropertyPurchased/> */}
       <Footer/>
     </div>
   )

@@ -6,28 +6,30 @@ const PropertyPurchased = () => {
   return (
     <div className="bg-gray-300 relative">
       <Wrapper>
-        <div className="text-gray-900 text-xl font-bold lg:p-5 relative right-5">
+        <div className="text-gray-900 text-2xl font-bold lg:p-4 relative right-3">
           Property Purchased So Far
-          <p className='text-sm'>Here are the properties you have purchased. Review them anytime!</p>
+          <p className='text-xl text-gray-500'>Here are the properties you have purchased. Review them anytime!</p>
         </div>
 
-        {/* Table Header */}
-        <div className="bg-slate-100 w-full px-4 lg:py-6 rounded-t-lg flex justify-between items-center border-gray-300">
-          <div className="w-1/3 text-left">
+        <div className="lg:py-6 relative  ">
+          {/* Table Header */}
+        <div className="bg-slate-100 w-full px-11 lg:py-6 rounded-t-lg flex justify-between items-center border-gray-300">
+          <div className="w-1/3 text-left  relative top-3">
             <h3 className="text-lg font-semibold">Title Listing</h3>
           </div>
-          <div className="w-1/3 text-center">
+          <div className="w-1/3 text-center relative top-3">
             <h3 className="text-lg font-semibold">Date Purchased</h3>
           </div>
-          <div className="w-1/3 text-right">
+          <div className="w-1/3 text-right relative top-3">
             <h3 className="text-lg font-semibold">Status</h3>
           </div>
         </div>
 
         {/* Property Item */}
-        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-gray-300'>
+        <div className="rounded-lg">
+        <div className='bg-white w-full px-4 lg:py-4 flex justify-between items-center border-b shadow-slate-400'>
           {/* Property Image and Details */}
-          <div className="flex items-center w-1/3 space-x-4">
+          <div className="flex items-center w-1/3 space-x-2">
             <img src={propertyImage} alt="Property" className="w-24 h-24 object-cover rounded-lg border-blue-300" />
             <div>
               <h4 className="text-xl font-semibold">Standard Bungalow</h4>
@@ -48,9 +50,9 @@ const PropertyPurchased = () => {
             </p>
           </div>
         </div>
-        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-gray-300'>
+        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-b  border-gray-300'>
           {/* Property Image and Details */}
-          <div className="flex items-center w-1/3 space-x-4">
+          <div className="flex items-center w-1/3 space-x-2">
             <img src={propertyImage} alt="Property" className="w-24 h-24 object-cover rounded-lg" />
             <div>
               <h4 className="text-xl font-semibold">Hotel</h4>
@@ -71,9 +73,9 @@ const PropertyPurchased = () => {
             </p>
           </div>
         </div>
-        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-gray-300'>
+        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-b shadow-slate-400 border-gray-300'>
           {/* Property Image and Details */}
-          <div className="flex items-center w-1/3 space-x-4">
+          <div className="flex items-center w-1/3 space-x-2">
             <img src={propertyImage} alt="Property" className="w-24 h-24 object-cover rounded-lg" />
             <div>
               <h4 className="text-xl font-semibold">Family Chalet</h4>
@@ -94,13 +96,13 @@ const PropertyPurchased = () => {
             </p>
           </div>
         </div>
-        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-gray-300'>
+        <div className='bg-white w-full px-4 lg:py-5 flex justify-between items-center border-b shadow-slate-400 border-gray-300 rounded-bl-lg rounded-br-lg'>
           {/* Property Image and Details */}
-          <div className="flex items-center w-1/3 space-x-4">
+          <div className="flex items-center w-1/3 space-x-1">
             <img src={propertyImage} alt="Property" className="w-24 h-24 object-cover rounded-lg" />
             <div>
               <h4 className="text-xl font-semibold">Beautiful Bungalow</h4>
-              <p className="text-lg text-gray-600">A spacious bungalow with modern amenities.</p>
+              <p className="text-lg text-gray-600">No 3 jaja crescent Gwarimpa, Abuja</p>
               <p className="text-lg font-semibold text-[#9FA007]">95,000,000</p>
             </div>
           </div>
@@ -111,11 +113,13 @@ const PropertyPurchased = () => {
           </div>
 
           
-          <div className="w-1/3 text-right">
+          <div className="w-1/3 text-right  ">
             <p className="inline-block px-3 py-1 text-lg font-medium  bg-green-100 text-green-400 rounded-full">
-              Processing
+              Approved
             </p>
           </div>
+        </div>
+        </div>
         </div>
       </Wrapper>
     </div>

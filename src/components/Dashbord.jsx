@@ -92,10 +92,10 @@
 // };
 
 // export default Dashboard;
-
-
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'; // Using react-icons for search icon
+// import { IoIosArrowDown } from 'react-icons/io'; // For dropdown arrow icon
+// import { FaBell} from 'react-icons/fa'; // Icons for notifications and messages
 import settings from '../assets/Icons/icons/solar_settings-outline.png';
 import logout from '../assets/Icons/icons/solar_logout-2-outline.png';
 import message from '../assets/Icons/icons/Vector (4).png';
@@ -107,12 +107,23 @@ import home from '../assets/Icons/icons/Vector (5).png';
 import pro from '../assets/Icons/icons/Homepro.png';
 import Welcome from './Welcome';
 import Recent from './Recent';
+import PropertyPurchased from './PropertyPurchased';
+import userlog from '../assets/Icons/icons/userlog.png'
+import dropdown from '../assets/Icons/icons/dropdown.png'
+
 
 export const Dashboard = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown toggle
+
+  // Function to toggle dropdown visibility
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-200">
-      {/* Left Sidebar - 25% width on large screens, full width on small screens */}
-      <div className="w-full lg:w-1/4 bg-white px-6 py-10 shadow-lg">
+      {/* Left Sidebar */}
+      <div className="w-full lg:w-1/4 bg-white px-4 py-6 shadow-lg">
         {/* Aligning Home and Pro Icons */}
         <div className="flex items-center justify-center lg:justify-start space-x-2 mb-8">
           <img src={home} alt="home-icon" className="h-8" />
@@ -166,33 +177,65 @@ export const Dashboard = () => {
         </ul>
       </div>
 
-      {/* Right Content - 75% width on large screens, full width on small screens */}
-      <div className="w-full  lg:w-3/4   bg-gray-300 relative ">
-        <div className="flex f sm:flex-row justify-between items-center bg-white h-[15%] mb-6">
-          {/* Dashboard title aligned with the search */}
-          <div className=''>
+      {/* Right Content */}
+      <div className="w-full lg:w-3/4 bg-gray-300 relative h-screen overflow-y-auto">
+        {/* Search bar and Dashboard title */}
+        <div className="flex flex-col sm:flex-row justify-between items-center bg-white h-[15%] mb-6 px-4 sm:px-6 lg:px-10">
           <h1 className="text-3xl font-bold mb-4 sm:mb-0">Dashboard</h1>
-          </div>
 
-          {/* Search Input */}
-          <div className="flex items-center bg-white border rounded-full shadow-md px-11 lg:px-32 py-3 sm:ml-4 relative   lg:right-[13rem]">
-            <AiOutlineSearch size={20} className="text-gray-600 mr-2" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full outline-none"
-            />
+          {/* Right section with Search, Icons, and Dropdown */}
+          <div className="flex items-center space-x-4 relative">
+
+            {/* Search Input */}
+            <div className="flex items-center bg-white border rounded-full  px-4 py-1 sm:px-6 lg:px-24 shadow-none w-full sm:w-auto relative right-28">
+              <AiOutlineSearch size={30} className="text-gray-600 mr-2 relative right-20" />
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full outline-none relative right-20"
+              />
+            </div>
+            {/* Icons: Notification and Message */}
+            <div className="flex relative">
+              <img src={bell} alt="" size={20}/>
+            {/* <FaBell className="text-gray-600" size={20} /> */}
+            <p className="relative  text-white text-sm right-3 items-center justify-center  bottom-2 bg-green-400 rounded-full h-5 w-4">2</p>
+            </div>
+            <img src={userlog} alt="userImage" size={10}/>
+            {/* <FaEnvelope className="text-gray-600" size={20} /> */}
+
+            {/* Dropdown Arrow */}
+            <div className="relative">
+              <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
+                <img src={dropdown} alt="" size={20}/>
+                {/* <IoIosArrowDown className="text-gray-600" size={20} /> */}
+              </button>
+
+              {/* Dropdown Menu */}
+              {dropdownOpen && (
+                <ul className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md text-gray-700">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Account Settings</li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Recently Viewed</li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-500">Logout</li>
+                </ul>
+              )}
+            </div>
           </div>
         </div>
-     
-        <div className='w-full h-full grid grid-cols-2  gap-10  overflow-hidden  lg:overflow-auto scrollbar-none'>
-        
-        <div className=" flex overflow-hidden  lg:overflow-auto scrollbar-none lg:ml-6">
-        <Welcome/>     
+
+        {/* Layout for Welcome and Recent components */}
+        <div className="flex flex-col space-y-6 lg:flex-row lg:space-y-0 lg:space-x-6 lg:px-6 px-4">
+          <div className="flex-1">
+            <Welcome />
+          </div>
+          <div className="flex-1">
+            <Recent />
+          </div>
         </div>
-        <div className="">
-        <Recent className=""/>
-        </div>
+
+        {/* PropertyPurchased component below */}
+        <div className="lg:mt-10 mt-6 lg:px-6 px-4">
+          <PropertyPurchased />
         </div>
       </div>
     </div>
@@ -200,4 +243,6 @@ export const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
 

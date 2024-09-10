@@ -30,7 +30,7 @@ const Recent = () => {
                 You recently added a property to your Favorites
               </p>
             </div>
-            <p className="text-gray-400 text-sm text-right">12th August, 2024 8:00am</p>
+            <p className="text-gray-400 text-sm text-right">10th August, 2024 5:00pm</p>
           </div>
         </div>
       </div>
