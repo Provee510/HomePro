@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/listings" element={<Listing />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </ModalProvider>

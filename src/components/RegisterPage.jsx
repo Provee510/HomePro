@@ -73,6 +73,7 @@ import imglogo from '../assets/Icons/icons/Vector (6) copy.png';
 import imglogo2 from '../assets/Icons/icons/Vector (7).png';
 import { useModal } from '../contexts/ModalContext';
 import { NavLink } from 'react-router-dom';
+import Login from '../components/Login'
 
 
 const RegisterModal = () => {
@@ -95,24 +96,25 @@ const RegisterModal = () => {
 
         <p className="text-black mb-6 text-center">
           Already have an account?
-          <span onClick={toggleModal}  className="text-[#9FA007] hover:underline"> 
+          <NavLink onClick={toggleModal}  to="/login" className="text-[#9FA007] hover:underline"> 
           Log In
-          </span>
+          </NavLink>
 
          
         </p>
         
         <form className="p-5">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 mb-2">Name*</label>
-            <input
-              id="name"
-              type="text"
-              required
-              placeholder="Provee Blaq"
-              className="w-full px-3 py-4 border border-gray-300 rounded-xl bg-slate-100"
-            />
-          </div>
+        <div className="mb-4">
+  <label htmlFor="registerName" className="block text-gray-700 mb-2">Name*</label>
+  <input
+    id="registerName"  // Changed id to "registerName"
+    type="text"
+    required
+    placeholder="Provee Blaq"
+    className="w-full px-3 py-4 border border-gray-300 rounded-xl bg-slate-100"
+  />
+</div>
+
 
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 mb-2">Email address*</label>
