@@ -7,6 +7,8 @@ import Footer from '../components/Footer'
 import Dashbord from '../components/Dashbord'
 // import Recent from '../components/Recent'
 // import PropertyPurchased from '../components/PropertyPurchased'
+import BlogCard from '../components/BlogCard'
+import Pige from '../components/Pige'
 
 
 const Blog = () => {
@@ -17,9 +19,11 @@ const Blog = () => {
       {/* <RegisterPage/> */}
       {/* <LoginPage/> */}
       {/* <ThankYou/> */}
-      <Dashbord/>
+      {/* <Dashbord/> */}
       {/* <Recent/> */}
       {/* <PropertyPurchased/> */}
+      <BlogCard/>
+      <Pige/>
       <Footer/>
     </div>
   )

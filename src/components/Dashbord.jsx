@@ -110,12 +110,15 @@ import Recent from './Recent';
 import PropertyPurchased from './PropertyPurchased';
 import userlog from '../assets/Icons/icons/userlog.png'
 import dropdown from '../assets/Icons/icons/dropdown.png'
+import user from '../assets/Icons/icons/icons8-user-24.png'
+import { IoReturnUpBackOutline } from "react-icons/io5";
+import two from '../assets/Icons/icons/Frame 232.png'
 
 
 export const Dashboard = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown toggle
 
-  // Function to toggle dropdown visibility
+  // Function to toggle dropdown 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -195,11 +198,11 @@ export const Dashboard = () => {
                 className="w-full outline-none relative right-20"
               />
             </div>
-            {/* Icons: Notification and Message */}
+            {/* /* Icons: Notification  */}
             <div className="flex relative">
               <img src={bell} alt="" size={20}/>
-            {/* <FaBell className="text-gray-600" size={20} /> */}
-            <p className="relative  text-white text-sm right-3 items-center justify-center  bottom-2 bg-green-400 rounded-full h-5 w-4">2</p>
+              <img src={two} alt="" className="relative  text-white text-sm right-3 items-center justify-center  bottom-2 bg-green-400 rounded-full h-5 w-4"/>
+            {/* <p className="relative  text-white text-sm right-3 items-center justify-center  bottom-2 bg-green-400 rounded-full h-5 w-4">2</p> */}
             </div>
             <img src={userlog} alt="userImage" size={10}/>
             {/* <FaEnvelope className="text-gray-600" size={20} /> */}
@@ -213,11 +216,27 @@ export const Dashboard = () => {
 
               {/* Dropdown Menu */}
               {dropdownOpen && (
-                <ul className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md text-gray-700">
+                <div>
+                  <ul className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md text-gray-700">
+                  <div className="flex relative">
+                   <img src={user} alt="" className="h-5 w-5 relative top-3 left-2"/>
+                   <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">My profile</li>
+                  </div>
+                  <div className="flex relative">
+                    <img src={settings} alt="" className="h-5 w-5 relative top-3 left-2"/>
                   <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Account Settings</li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Recently Viewed</li>
+                  </div>
+                  <div className="flex relative ">
+                    <img src={logout} alt="" className="h-5 w-5 relative top-3 left-2"/>
                   <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-500">Logout</li>
+                  </div>
+                  <div className="flex relative">
+                  <IoReturnUpBackOutline className="h-5 w-5 relative top-3 left-3"/>
+
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer ">Go to website</li>
+                  </div>
                 </ul>
+                </div>
               )}
             </div>
           </div>
